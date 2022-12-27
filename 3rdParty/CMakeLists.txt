@@ -27,6 +27,11 @@
 #endif()
 
 #FetchContent_Declare(
+#    glfw
+#    GIT_REPOSITORY https://github.com/glfw/glfw.git
+#)
+
+#FetchContent_Declare(
 #    glew
 #    GIT_REPOSITORY https://github.com/nigels-com/glew.git
 #)

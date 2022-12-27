@@ -2,7 +2,7 @@
 # project specific logic here.
 #
 
-cmake_print_variables(libbacktrace_SOURCE_DIR)
+#cmake_print_variables(libbacktrace_SOURCE_DIR)
 include_directories(
     src/
     ../KewlF/src/
