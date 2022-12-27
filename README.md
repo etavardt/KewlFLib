@@ -8,3 +8,6 @@ An Application Foundation Library for C++ (A work in progress)
 ## KewlFApp
 
 	The test app class to ensure everything is OK.
+
+## TODO
+	Write our own KewlF Logger as easyloggingpp has too many issues.
