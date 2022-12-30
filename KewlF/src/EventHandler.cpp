@@ -1,10 +1,10 @@
-//#include "easylogging++.h"
+//#include "Logger.hpp"
 #include "EventHandler.hpp"
 
 #include "Exception.hpp"
 #include "Window.hpp"
 
-#include "easylogging++.h"
+#include "Logger.hpp"
 #include "unused_macros.hpp"
 
 #undef UNHANDLED

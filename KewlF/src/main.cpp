@@ -5,9 +5,7 @@
 
 #include "App.hpp"
 #include "Exception.hpp"
-#include "easylogging++.h" // 3rd Party Easy Logging++
-
-INITIALIZE_EASYLOGGINGPP
+#include "Logger.hpp"
 
 using std::cout;
 using std::cerr;
@@ -15,7 +13,6 @@ using std::endl;
 
 //extern "C"
 int main(int ac, char **av) {
-    START_EASYLOGGINGPP(ac, av);
     App &app = App::getApp();
     try {
         app.processCmdLine(ac, av);

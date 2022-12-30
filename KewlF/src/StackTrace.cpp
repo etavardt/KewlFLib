@@ -8,7 +8,7 @@
 
 //#include "Bob.hpp"
 #include "String.hpp"
-#include "easylogging++.h" // 3rd Party Easy Logging++
+#include "Logger.hpp"
 
 #ifndef ATTRIBUTE_UNUSED
 #define ATTRIBUTE_UNUSED __attribute__((__unused__))

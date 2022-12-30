@@ -4,14 +4,12 @@
 
 include_directories(
     src/
-    ../3rdParty/easyloggingpp/src/
 #    ${libbacktrace_SOURCE_DIR}/src/
 #    ${libbacktrace_BINARY_DIR}/gen
 )
 
 # Add source to this project's executable.
 file(GLOB SOURCE_FILES LIST_DIRECTORIES false
-    ../3rdParty/easyloggingpp/src/*.cc
     src/*.cpp
 )
 add_library (KewlF STATIC ${SOURCE_FILES})
