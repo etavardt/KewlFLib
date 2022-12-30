@@ -3,7 +3,7 @@
 #include "App.hpp"
 #include "String.hpp"
 #include "Exception.hpp"
-#include "easylogging++.h"
+#include "Logger.hpp"
 
 Window::Window() {
 }

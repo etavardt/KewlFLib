@@ -2,8 +2,7 @@
 
 #include "Window.hpp"
 #include "Exception.hpp"
-
-#include "easylogging++.h"
+#include "Logger.hpp"
 
 App *App::app = nullptr;
 
@@ -20,7 +19,7 @@ void App::init() {
 }
 
 void App::cleanUp() {
-    LOG(INFO) << "Clean up.";
+//    LOG(INFO) << "Clean up.";
 }
 
 App &App::getApp() {
