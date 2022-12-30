@@ -1,3 +1,3 @@
-#include "Logger.hpp"
+//#include "Logger.hpp"
 
-std::ostream& Logger::m_Log = std::cout;
+//std::ostream& Logger::m_Log = std::cout;

@@ -25,7 +25,7 @@ enum Level {
 
 class Logger {
 private:
-    static std::ostream& m_Log;
+    std::ostream& m_Log = std::cout;
 
     Logger(const Logger&) = delete;
     Logger& operator=(const Logger&) = delete;
