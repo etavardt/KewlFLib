@@ -9,6 +9,6 @@ private:
 public:
     Image() = default;
     Image(String &filename);
-    ~Image();
+    virtual ~Image();
 
 };

@@ -30,6 +30,8 @@
 //         return instance;
 //      }
 //
+// TODO: Can this be even simpler perhaps by utilizing templates
+// 
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
