@@ -1,16 +1,18 @@
 ﻿// KewlF.cpp : Defines the entry point for the application.
 //
 
-#include "KewlFApp.h"
+#include "KewlFApp.hpp"
 #include "Exception.hpp"
+#include "Logger.hpp"
+#include "KewlFClass.hpp"
 
-KewlFApp& KewlFApp::kewlApp = KewlFApp::getInstance();
+KewlFApp kewlApp;
 
 KewlFApp::KewlFApp() {
-    std::cout << "KewlFApp Constructed" << std::endl;
+    LOG(INFO) << "KewlFApp Constructed" << std::endl;
 }
 KewlFApp::~KewlFApp() {
-    std::cout << "KewlFApp Destructed" << std::endl;
+    LOG(INFO) << "KewlFApp Destructed" << std::endl;
 }
 
 int KewlFApp::processCmdLine(int argCnt, char** argList) {
@@ -18,21 +20,21 @@ int KewlFApp::processCmdLine(int argCnt, char** argList) {
 }
 
 void KewlFApp::init() {
+    KewlFClass kewlClass;
 
-}
-
-KewlFApp& KewlFApp::getInstance() {
-    static KewlFApp instance; // should be created on heap? and there is only one and should be freed upon exit of the executable
-    app = &instance; // this allows the underlying main function to hook into yourApp
-    return instance;
+    kewlClass.isMyKewlFAppAccessable();
 }
 
 int KewlFApp::runApp() {
-    std::cout << "Hello CMake." << std::endl;
-    throw Exception("Test this!");
+    LOG(INFO) << "Hello World." << std::endl;
+    throw Exception("This exception was intentional!");
     return 0;
 }
 
 void KewlFApp::cleanUp() {
 
+}
+
+void KewlFApp::isMyKewlFAppAccessable() {
+    LOG(INFO) "Yes! I am visable when required." << std::endl;
 }

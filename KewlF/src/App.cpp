@@ -4,14 +4,20 @@
 #include "Exception.hpp"
 #include "Logger.hpp"
 
-App *App::app = nullptr;
+App* App::app = nullptr;
 
 App::App() {
+    if (app != nullptr) {
+        LOG(ERROR) << "The Application was already created" << std::endl;
+        exit(-1);
+    }
+    app = this;
 //    registerEventHandling();
 }
 
 App::~App() {
  //   unRegisterEventHandling();
+    app = nullptr;
 }
 
 void App::init() {
@@ -23,7 +29,7 @@ void App::cleanUp() {
 }
 
 App &App::getApp() {
-    if (app == nullptr) throw "No Application Object Exists";
+    if (app == nullptr) throw Exception("No Application Object Exists");
     return *app;
 }
 
