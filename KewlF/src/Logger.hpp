@@ -42,4 +42,4 @@ public:
 
 };
 
-#define LOG(x) Logger::getInstance() << #x  << ": "
+#define LOG(x) Logger::getInstance() << #x  << ": " << __FILE__ << "(" <<  __LINE__ << "): " 
