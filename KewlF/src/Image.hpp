@@ -10,5 +10,4 @@ public:
     Image() = default;
     Image(String &filename);
     virtual ~Image();
-
 };

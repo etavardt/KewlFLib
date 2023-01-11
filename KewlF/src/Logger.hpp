@@ -5,7 +5,7 @@
 #include "String.hpp"
 
 // Severity level enum.
-enum Level {
+enum LogLevel {
     FATAL = 0,
     ERROR = 1,
     WARNING = 2,
@@ -34,7 +34,9 @@ public:
     Logger() {};
 
     std::ostream& operator <<(const auto& data) {
+#if defined KEWLF_DEBUG
         m_Log << data;
+#endif
         return m_Log;
     }
 
