@@ -2,8 +2,10 @@
 //
 
 #include "KewlFApp.hpp"
-#include "Exception.hpp"
-#include "Logger.hpp"
+#include <cassert>
+#include <KewlF/Exception.hpp>
+#include <KewlF/Logger.hpp>
+#include <KewlF/Color.hpp>
 #include "KewlFClass.hpp"
 
 KewlFApp kewlApp;
@@ -26,6 +28,12 @@ void KewlFApp::init() {
 }
 
 int KewlFApp::runApp() {
+    Color color;
+    NormalizedColor nColor;
+
+    assert(color.a == 255);
+    assert(nColor.a == 1.0f);
+
     LOG(INFO) << "Hello World." << std::endl;
     throw Exception("This exception was intentional!");
     return 0;

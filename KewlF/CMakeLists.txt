@@ -21,3 +21,8 @@ endif()
 
 # TODO: Add tests and install targets if needed.
 install(TARGETS KewlF FILE_SET HEADERS)
+
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/
+     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include/KewlF
+     FILES_MATCHING PATTERN src/*.hpp
+)
