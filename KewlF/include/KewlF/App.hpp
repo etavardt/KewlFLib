@@ -14,13 +14,29 @@
 //      #include "App.hpp"
 // 
 //      class YourKewlApp : public App {
+//      private:
 //          ...
 //      public:
 //          ...
 //      }
+// or
+//      #include "App.hpp"
+// 
+//      class YourKewlApp : public App {
+//      private:
+//          static YourKewlApp yourKewlApp;
+//          ...
+//      public:
+//          ...
+//          // Implement a getter for access to your app from other code units if needed.
+//          inline YourKewlApp& getYourKewlApp() const { return yourKewlApp; }
+//      }
+
 // Step 2: Create your app object globally in your yourKewlApp.cpp file
 //      i.e.:
 //          YourKewlApp yourKewlApp;
+//      or
+//          YourKewlApp YourKewlApp::yourKewlApp;
 // 
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
@@ -41,7 +57,6 @@ public:
     friend int main(int ac, char **av);
 
 protected:
-    static App* app;
     static App& getApp();
 
     App(); // Default constructor hidden to make it a singleton
@@ -53,6 +68,7 @@ protected:
     virtual int runApp();   // Use this for your primary program implementation
 
 private:
+    static App* app;
 
     int argCnt = 0;
     char **argList = nullptr;

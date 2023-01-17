@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <ostream>
+#include <fstream>
 #include "String.hpp"
 
 // Severity level enum.
@@ -14,34 +15,48 @@ enum LogLevel {
     TRACE = 5
 };
 
-//String loggerLevel[] = {
-//        "Fatal",
-//        "Error",
-//        "Warning",
-//        "Info",
-//        "Debug",
-//        "Trace"
-//};
-
 class Logger {
 private:
-    std::ostream& m_Log = std::cout;
+#if defined KEWLF_DEBUG
+    bool dynamic = false;
+    std::ostream* m_log = &std::cout;
+#else
+    bool dynamic = true;
+    //    std::ostream& m_log = static_cast<std::ostream&>(std::ofstream("/dev/null"));
+//    std::ostream& m_log = std::ofstream("/dev/null");
+    std::ostream* m_log = new std::ofstream("/dev/null");
+#endif
 
     Logger(const Logger&) = delete;
     Logger& operator=(const Logger&) = delete;
 
-public:
     Logger() {};
-
-    std::ostream& operator <<(const auto& data) {
-#if defined KEWLF_DEBUG
-        m_Log << data;
-#endif
-        return m_Log;
+    ~Logger() {
+        if (dynamic) delete m_log;
     }
+public:
 
-    static Logger& getInstance() { static Logger log; return log; };
+    std::ostream& log(LogLevel logLevel, String file, int line);
+
+    //std::ostream& operator <<(const auto& data);
+    std::ostream& operator <<(const auto& data) {
+        if (!dynamic) {
+            *m_log << data;
+        }
+        return *m_log;
+    }
+    static inline Logger& getInstance() {
+        static Logger log;
+        return log;
+    };
 
 };
 
-#define LOG(x) Logger::getInstance() << #x  << ": " << __FILE__ << "(" <<  __LINE__ << "): " 
+//#define LOG(x) Logger::getInstance() << #x  << ": " << __FILE__ << "(" <<  __LINE__ << "): " 
+//#if defined KEWLF_DEBUG
+#define LOG(x) Logger::getInstance().log(x,  __FILE__, __LINE__) 
+//#ifdef KEWLF_DEBUG
+//#define LOG(x) Logger::getInstance().log(x,  __FILE__, __LINE__) 
+//#else
+//#define LOG(x) Logger::getInstance()
+//#endif
