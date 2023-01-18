@@ -44,5 +44,5 @@ void KewlFApp::cleanUp() {
 }
 
 void KewlFApp::isMyKewlFAppAccessable() {
-    LOG(INFO) "Yes! I am visable when required." << std::endl;
+    LOG(INFO) << "Yes! I am visable when required." << std::endl;
 }
