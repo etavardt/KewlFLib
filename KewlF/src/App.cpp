@@ -7,7 +7,7 @@
 App* App::app = nullptr;
 
 App::App() {
-    LOG(TRACE) << "App was constructed" << std::endl;
+    LOG(TRACE) << "App Constructor" << std::endl;
     if (app != nullptr) {
         LOG(ERROR) << "The Application was already created" << std::endl;
         exit(-1);
@@ -17,7 +17,7 @@ App::App() {
 }
 
 App::~App() {
-    LOG(TRACE) << "App was destroyed" << std::endl;
+    LOG(TRACE) << "App Deconstructor" << std::endl;
     //   unRegisterEventHandling();
     app = nullptr;
 }

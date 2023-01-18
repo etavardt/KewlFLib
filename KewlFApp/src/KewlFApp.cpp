@@ -11,10 +11,10 @@
 KewlFApp kewlApp;
 
 KewlFApp::KewlFApp() {
-    LOG(INFO) << "KewlFApp Constructed" << std::endl;
+    LOG(INFO) << "KewlFApp Constructor" << std::endl;
 }
 KewlFApp::~KewlFApp() {
-    LOG(INFO) << "KewlFApp Destructed" << std::endl;
+    LOG(INFO) << "KewlFApp Destructor" << std::endl;
 }
 
 int KewlFApp::processCmdLine(int argCnt, char** argList) {

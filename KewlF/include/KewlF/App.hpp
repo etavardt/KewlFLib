@@ -61,7 +61,7 @@ protected:
 
     App(); // Default constructor hidden to make it a singleton
     App(App const &) = delete;
-    virtual ~App();
+    ~App();
 
     virtual void init();    // Not required but used to keep runApp clean
     virtual void cleanUp(); // Same as init's comment but use to Clean up anything init(ed)
