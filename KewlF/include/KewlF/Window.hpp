@@ -37,8 +37,8 @@ public:
     bool toggleFullScreen();
 
     //void createWindow(const String title, int x, int y, int w, int h, Uint32 flags);
-    virtual void createWindow();
-    virtual void show();
+    virtual void createWindow(bool showWindow = false);
+    virtual void show() {};
     virtual void hide() {};
 
     // Event functions
