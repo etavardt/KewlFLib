@@ -6,25 +6,22 @@
 #include "Logger.hpp"
 
 Window::Window() {
+    LOG(TRACE) << "Window::Window()." << std::endl;
 }
 
 Window::~Window() {
-    LOG(TRACE) << "Window::~Window().";
+    LOG(TRACE) << "Window::~Window()." << std::endl;
 
     //unRegisterEventHandling();
 
 }
 
-void Window::createWindow() {
+void Window::createWindow(bool showWindow /* = false */) {
 
-    LOG(TRACE) << "Pre Window.init().";
-    init();
+    LOG(TRACE) << "Pre Window.init()." << std::endl;
 
     // width  = desktopDm.w;
     // height = desktopDm.h;
-}
-
-void Window::show() {
 }
 
 void Window::init() {
@@ -34,7 +31,7 @@ void Window::init() {
 }
 
 bool Window::toggleFullScreen() {
-    LOG(TRACE) << "In Window::toggleFullScreen.";
+    LOG(TRACE) << "In Window::toggleFullScreen." << std::endl;
 
     return 0;
 }
