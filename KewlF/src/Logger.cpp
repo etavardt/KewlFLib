@@ -10,10 +10,19 @@ std::ostream& Logger::log(LogLevel logLevel, String file, int line) {
         "Warning: ",
         "Info: ",
         "Debug: ",
-        "Trace: "
+        "Trace: ",
+        "" // May use an indicator in the future
     };
     
-    *m_log << loggerLevel[logLevel] << file << "(" << line << "): ";
+    switch (logLevel) {
+    case ASIS:
+        *m_log << loggerLevel[logLevel];
+        break;
+    default:
+        *m_log << loggerLevel[logLevel] << file << "(" << line << "): ";
+        break;
+    }
+
     return *m_log;
 }
 //std::ostream& Logger::operator <<(const auto& data) {

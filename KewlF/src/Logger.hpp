@@ -12,7 +12,8 @@ enum LogLevel {
     WARNING = 2,
     INFO = 3,
     DEBUG = 4,
-    TRACE = 5
+    TRACE = 5,
+    ASIS = 6 
 };
 
 class Logger {

@@ -35,6 +35,7 @@ int KewlFApp::runApp() {
     assert(nColor.a == 1.0f);
 
     LOG(INFO) << "Hello World." << std::endl;
+    LOG(ASIS) << "Hello World! Logged as is." << std::endl;
     throw Exception("This exception was intentional!");
     return 0;
 }
