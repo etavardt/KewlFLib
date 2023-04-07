@@ -3,9 +3,9 @@
 
 #include "KewlFApp.hpp"
 #include <cassert>
-#include <KewlF/Exception.hpp>
-#include <KewlF/Logger.hpp>
-#include <KewlF/Color.hpp>
+#include <Kewl/Exception.hpp>
+#include <Kewl/Logger.hpp>
+#include <Kewl/Color.hpp>
 #include "KewlFClass.hpp"
 
 KewlFApp kewlApp;

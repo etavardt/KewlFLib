@@ -4,7 +4,7 @@
 #pragma once
 
 #include <iostream>
-#include <KewlF/App.hpp>
+#include <Kewl/App.hpp>
 
 class KewlFApp : public App {
 protected:

@@ -4,16 +4,22 @@
 
 include_directories(
     src/
-#    ${libbacktrace_SOURCE_DIR}/src/
-#    ${libbacktrace_BINARY_DIR}/gen
+    ../3rdParty/include/
+    ../3rdParty/glfw/include/
+    ../3rdParty/glad/src/
+    ../3rdParty/glad/include/
+    ../3rdParty/imgui/
 )
 
 # Add source to this project's executable.
-file(GLOB SOURCE_FILES LIST_DIRECTORIES false
+file(GLOB_RECURSE SOURCE_FILES LIST_DIRECTORIES false
     src/*.cpp
 )
+
+cmake_print_variables(SOURCE_FILES)
+
 add_library (KewlF STATIC ${SOURCE_FILES})
-#target_link_libraries(KewlF ${libbacktrace_BINARY_DIR}/libbacktrace.a)
+
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     target_compile_definitions(KewlF PUBLIC KEWLF_DEBUG)
 endif()
@@ -23,11 +29,10 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
 endif()
 
 # TODO: Add tests and install targets if needed.
-install(TARGETS KewlF FILE_SET HEADERS)
 
 file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/
-     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include/KewlF
-     FILES_MATCHING PATTERN src/*.hpp
+     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include/
+     FILES_MATCHING PATTERN *.hpp
 )
 
 #add_custom_command(
@@ -39,4 +44,13 @@ file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/
 #    DIRECTORY ${CMAKE_SOURCE_DIR}/src/
 #    DESTINATION ${CMAKE_SOURCE_DIR}/include/KewlF
 #    FILES_MATCHING PATTERN "*.h*"
+#)
+#install(TARGETS KewlF
+#        FILE_SET
+#        HEADERS
+#)
+#install(DIRECTORY "${CMAKE_SOURCE_DIR}/" # source directory
+#        DESTINATION "include" # target directory
+#        FILES_MATCHING # install only matched files
+#        PATTERN "*.h" # select header files
 #)

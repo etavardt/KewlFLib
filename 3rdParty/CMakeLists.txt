@@ -2,6 +2,9 @@
 # project specific logic here.
 #
 
+# Include sub-projects.
+add_subdirectory ("glfw")
+
 #include(FetchContent)
 
 #find_package(backtrace REQUIRED)

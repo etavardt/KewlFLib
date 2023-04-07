@@ -5,13 +5,16 @@
 #cmake_print_variables(libbacktrace_SOURCE_DIR)
 include_directories(
     src/
-    ../KewlF/include/
+    ../KewlF/src/
+#    ../KewlF/include/
 )
 
 # Add source to this project's executable.
-file(GLOB SOURCE_FILES LIST_DIRECTORIES false
+file(GLOB_RECURSE SOURCE_FILES LIST_DIRECTORIES false
     src/*.cpp
 )
+
+cmake_print_variables(SOURCE_FILES)
 
 # Add source to this project's executable.
 add_executable (KewlFApp ${SOURCE_FILES})
