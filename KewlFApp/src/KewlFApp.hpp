@@ -4,9 +4,9 @@
 #pragma once
 
 #include <iostream>
-#include <Kewl/App.hpp>
+#include <Kewl\App.hpp>
 
-class KewlFApp : public App {
+class KewlFApp : public Kewl::App {
 protected:
     // Don't worry about calling these they should be called 
     // automatically by our built-in main fuction in order.

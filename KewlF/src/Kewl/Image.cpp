@@ -3,8 +3,13 @@
 #include "String.hpp"
 #include "Exception.hpp"
 
-Image::Image(String &filename) {
-}
+namespace Kewl
+{
 
-Image::~Image() {
-}
+    Image::Image(String& filename) {
+    }
+
+    Image::~Image() {
+    }
+
+} // namespace Kewl

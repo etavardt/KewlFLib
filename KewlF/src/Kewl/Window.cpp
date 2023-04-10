@@ -5,43 +5,48 @@
 #include "Exception.hpp"
 #include "Logger.hpp"
 
-Window::Window() {
-    LOG(TRACE) << "Window::Window()." << std::endl;
-}
+namespace Kewl
+{
 
-Window::~Window() {
-    LOG(TRACE) << "Window::~Window()." << std::endl;
+    Window::Window() {
+        LOG(TRACE) << "Window::Window()." << std::endl;
+    }
 
-    //unRegisterEventHandling();
+    Window::~Window() {
+        LOG(TRACE) << "Window::~Window()." << std::endl;
 
-}
+        //unRegisterEventHandling();
 
-void Window::createWindow(bool showWindow /* = false */) {
+    }
 
-    LOG(TRACE) << "Pre Window.init()." << std::endl;
+    void Window::createWindow(bool showWindow /* = false */) {
 
-    // width  = desktopDm.w;
-    // height = desktopDm.h;
-}
+        LOG(TRACE) << "Pre Window.init()." << std::endl;
 
-void Window::init() {
-//    aspectRatio = (1.0f * desktopDm.w)/desktopDm.h;
-//    minWidth  = desktopDm.w/2;
-//    minHeight = desktopDm.h/2;
-}
+        // width  = desktopDm.w;
+        // height = desktopDm.h;
+    }
 
-bool Window::toggleFullScreen() {
-    LOG(TRACE) << "In Window::toggleFullScreen." << std::endl;
+    void Window::init() {
+        //    aspectRatio = (1.0f * desktopDm.w)/desktopDm.h;
+        //    minWidth  = desktopDm.w/2;
+        //    minHeight = desktopDm.h/2;
+    }
 
-    return 0;
-}
+    bool Window::toggleFullScreen() {
+        LOG(TRACE) << "In Window::toggleFullScreen." << std::endl;
 
-void Window::displayText(const String &str, const int x, const int y) {
+        return 0;
+    }
 
-};
+    void Window::displayText(const String& str, const int x, const int y) {
 
-void Window::displayImage(Image &image, const int x, const int y) {
+    };
 
-}
+    void Window::displayImage(Image& image, const int x, const int y) {
 
-// Event functions
+    }
+
+    // Event functions
+
+} // namespace Kewl

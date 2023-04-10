@@ -6,13 +6,19 @@
 #include "String.hpp"
 #include "StackTrace.hpp"
 
-class Exception : public std::logic_error {
-  public:
-    explicit Exception(const String& arg) : std::logic_error(arg) {}
+namespace Kewl
+{
 
-    virtual const String getMsg();
-    SharedStringPointer getStackTrace();
+    class Exception : public std::logic_error
+    {
+    public:
+        explicit Exception(const String& arg) : std::logic_error(arg) {}
 
-  private:
-    StackTrace &st = StackTrace::getInstance();
-};
+        virtual const String getMsg();
+        SharedStringPointer getStackTrace();
+
+    private:
+        StackTrace& st = StackTrace::getInstance();
+    };
+
+} // namespace Kewl

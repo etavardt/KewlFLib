@@ -11,26 +11,32 @@
 #define UNHANDLED(x) LOG(DEBUG) << "Unhandled Event(" << x.type << ")";
 //#define UNHANDLED(x) (void)(x);
 
-//typedef Exception EventException;
-class EventException : public Exception {};
+namespace Kewl
+{
 
-RegisteredEventHandlerMap EventHandler::registeredEventHandlers;
+    //typedef Exception EventException;
+    class EventException : public Exception
+    {};
 
-// int EventHandler::registerEventHandling(EventHandler &ehObject) {
-//     registeredEventHandlers.insert(RegisteredEventHandlerPair(ehObject.id, ehObject));
-//     return 1;
-// }
-int EventHandler::registerEventHandling() {
-    registeredEventHandlers.insert(RegisteredEventHandlerPair(id, *this));
-    return 1;
-}
+    RegisteredEventHandlerMap EventHandler::registeredEventHandlers;
 
-void EventHandler::unRegisterEventHandling() {
-    registeredEventHandlers.erase(id);
-}
+    // int EventHandler::registerEventHandling(EventHandler &ehObject) {
+    //     registeredEventHandlers.insert(RegisteredEventHandlerPair(ehObject.id, ehObject));
+    //     return 1;
+    // }
+    int EventHandler::registerEventHandling() {
+        registeredEventHandlers.insert(RegisteredEventHandlerPair(id, *this));
+        return 1;
+    }
 
-bool EventHandler::pollAndHandleEvent() {
-    return 0;
-}
+    void EventHandler::unRegisterEventHandling() {
+        registeredEventHandlers.erase(id);
+    }
+
+    bool EventHandler::pollAndHandleEvent() {
+        return 0;
+    }
+
+} // namespace Kewl
 
 #undef UNHANDLED

@@ -5,8 +5,9 @@
 #cmake_print_variables(libbacktrace_SOURCE_DIR)
 include_directories(
     src/
-    ../KewlF/src/
-#    ../KewlF/include/
+    include/
+#    ../KewlF/src/
+    ../KewlF/include/
 )
 
 # Add source to this project's executable.

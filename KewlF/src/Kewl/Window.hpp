@@ -1,49 +1,55 @@
 #pragma once
 
-#include "EventHandler.hpp"
+#include <Kewl/EventHandler.hpp>
+#include <Kewl/String.hpp>
+#include <Kewl/Color.hpp>
+#include <Kewl/Image.hpp>
 
-#include "String.hpp"
-#include "Color.hpp"
-#include "Image.hpp"
+namespace Kewl
+{
 
-enum DrawPosition {
-    CENTERED = -1
-};
-class Window : public EventHandler {
-private:
-    // unsigned int width  = 0;
-    // unsigned int height = 0;
+    enum DrawPosition
+    {
+        CENTERED = -1
+    };
+    class Window : public EventHandler
+    {
+    private:
+        // unsigned int width  = 0;
+        // unsigned int height = 0;
 
-protected:
-    // Color backgroundColor(0,0,0,255);
-    Color backgroundColor = {0,0,0,255};
-    Color foregroundColor = {255,255,255,255};
+    protected:
+        // Color backgroundColor(0,0,0,255);
+        Color backgroundColor = {0,0,0,255};
+        Color foregroundColor = {255,255,255,255};
 
-    float aspectRatio = 0.75f;
-    float scale = 1.0f;
+        float aspectRatio = 0.75f;
+        float scale = 1.0f;
 
-    int minWidth  = 0;
-    int minHeight = 0;
+        int minWidth = 0;
+        int minHeight = 0;
 
-    virtual void init();
+        virtual void init();
 
-    void displayText(const String &str, const int x, const int y);
-    void displayImage(Image &image, const int x, const int y);
+        void displayText(const String& str, const int x, const int y);
+        void displayImage(Image& image, const int x, const int y);
 
-public:
-    Window();
-    virtual ~Window();
+    public:
+        Window();
+        virtual ~Window();
 
-    bool toggleFullScreen();
+        bool toggleFullScreen();
 
-    //void createWindow(const String title, int x, int y, int w, int h, Uint32 flags);
-    virtual void createWindow(bool showWindow = false);
-    virtual void show() {};
-    virtual void hide() {};
+        //void createWindow(const String title, int x, int y, int w, int h, Uint32 flags);
+        virtual void createWindow(bool showWindow = false);
+        virtual void show() {};
+        virtual void hide() {};
 
-    // Event functions
+        // Event functions
 
 
-    // Window Specific
- 
-};
+        // Window Specific
+
+    };
+
+} // namespace Kewl

@@ -41,39 +41,47 @@
 ///////////////////////////////////////////////////////////////////////////////
 #pragma once
 
-//#include "EventHandler.hpp"
+int main(int ac, char** av);
 
-class App { //: public EventHandler {
-public:
-    void operator=(App const &) = delete;
+namespace Kewl
+{
+    //#include "EventHandler.hpp"
 
-    virtual int processCmdLine(int _argCnt, char **_argList) {
-        argCnt = _argCnt;
-        argList = _argList;
-        return 1;
-    }
-    char *getAppFileName() { return argList[0]; }
+    class App
+    { //: public EventHandler {
+    public:
+        void operator=(App const&) = delete;
 
-    friend int main(int ac, char **av);
+        virtual int processCmdLine(int _argCnt, char** _argList) {
+            argCnt = _argCnt;
+            argList = _argList;
+            return 1;
+        }
+        char* getAppFileName() {
+            return argList[0];
+        }
 
-protected:
-    static App& getApp();
+        friend int ::main(int ac, char** av);
 
-    App(); // Default constructor hidden to make it a singleton
-    App(App const &) = delete;
-    ~App();
+    protected:
+        static App& getApp();
 
-    virtual void init();    // Not required but used to keep runApp clean
-    virtual void cleanUp(); // Same as init's comment but use to Clean up anything init(ed)
-    virtual int runApp();   // Use this for your primary program implementation
+        App(); // Default constructor hidden to make it a singleton
+        App(App const&) = delete;
+        ~App();
 
-private:
-    static App* app;
+        virtual void init();    // Not required but used to keep runApp clean
+        virtual void cleanUp(); // Same as init's comment but use to Clean up anything init(ed)
+        virtual int runApp();   // Use this for your primary program implementation
 
-    int argCnt = 0;
-    char **argList = nullptr;
+    private:
+        static App* app;
 
-    virtual void processEventLoop();
+        int argCnt = 0;
+        char** argList = nullptr;
 
-//    virtual void onShown(WindowEvent &event) override;
-};
+        virtual void processEventLoop();
+
+        //    virtual void onShown(WindowEvent &event) override;
+    };
+} // namespace Kewl

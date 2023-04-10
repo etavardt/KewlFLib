@@ -4,28 +4,34 @@
 
 #include "String.hpp"
 
-class EventHandler;
-typedef unsigned long long EventHandlerId;
-typedef std::map<EventHandlerId, EventHandler &> RegisteredEventHandlerMap;
-typedef RegisteredEventHandlerMap::value_type RegisteredEventHandlerPair;
+namespace Kewl
+{
 
-class EventHandler {
-private:
-    static RegisteredEventHandlerMap registeredEventHandlers;
+    class EventHandler;
+    typedef unsigned long long EventHandlerId;
+    typedef std::map<EventHandlerId, EventHandler&> RegisteredEventHandlerMap;
+    typedef RegisteredEventHandlerMap::value_type RegisteredEventHandlerPair;
 
-protected:
-    // EventHandler() = default;
-    // EventHandler(EventHandler const &) = delete;
-    // virtual ~EventHandler() = default;
-    //virtual int registerEventHandling(EventHandler &ehObject);
-    int registerEventHandling();
-    void unRegisterEventHandling();
+    class EventHandler
+    {
+    private:
+        static RegisteredEventHandlerMap registeredEventHandlers;
 
-    // User overridable
-    virtual bool pollAndHandleEvent();
+    protected:
+        // EventHandler() = default;
+        // EventHandler(EventHandler const &) = delete;
+        // virtual ~EventHandler() = default;
+        //virtual int registerEventHandling(EventHandler &ehObject);
+        int registerEventHandling();
+        void unRegisterEventHandling();
 
-    EventHandlerId id;
+        // User overridable
+        virtual bool pollAndHandleEvent();
 
-public:
+        EventHandlerId id;
 
-};
+    public:
+
+    };
+
+} // namespace Kewl

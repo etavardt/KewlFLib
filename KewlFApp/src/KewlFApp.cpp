@@ -8,6 +8,11 @@
 #include <Kewl/Color.hpp>
 #include "KewlFClass.hpp"
 
+using namespace Kewl;
+//using Kewl::ERROR;
+//using Kewl::INFO;
+//using Kewl::ASIS;
+
 KewlFApp kewlApp;
 
 KewlFApp::KewlFApp() {
@@ -36,6 +41,7 @@ int KewlFApp::runApp() {
 
     LOG(INFO) << "Hello World." << std::endl;
     LOG(ASIS) << "Hello World! Logged as is." << std::endl;
+    std::cout << "Hello World! From std::cout!" << std::endl;
     throw Exception("This exception was intentional!");
     return 0;
 }

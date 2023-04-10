@@ -5,21 +5,26 @@
 #include "String.hpp"
 #include "StackTrace.hpp"
 
-SharedStringPointer Exception::getStackTrace() {
-    SharedStringPointer sTrace = makeSharedString();
-    String stMsg = st.getStackTrace();
+namespace Kewl
+{
 
-    sTrace->append(stMsg);
+    SharedStringPointer Exception::getStackTrace() {
+        SharedStringPointer sTrace = makeSharedString();
+        String stMsg = st.getStackTrace();
 
-    return sTrace;
-}
+        sTrace->append(stMsg);
 
-const String Exception::getMsg() {
-    String msg;
+        return sTrace;
+    }
 
-    msg.append("Exception Thrown: ");
-    msg.append(what());
-    msg.append(*getStackTrace());
+    const String Exception::getMsg() {
+        String msg;
 
-    return msg;
-}
+        msg.append("Exception Thrown: ");
+        msg.append(what());
+        msg.append(*getStackTrace());
+
+        return msg;
+    }
+
+} // namespace Kewl
