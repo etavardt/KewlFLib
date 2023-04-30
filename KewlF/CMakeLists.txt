@@ -2,10 +2,14 @@
 # project specific logic here.
 #
 
+FetchContent_MakeAvailable(glfw)
+cmake_print_variables(glfw_SOURCE_DIR)
+
 include_directories(
     src/
     ../3rdParty/include/
-    ../3rdParty/glfw/include/
+    #../3rdParty/glfw/include/
+    ${glfw_SOURCE_DIR}/include/
     ../3rdParty/glad/src/
     ../3rdParty/glad/include/
     ../3rdParty/imgui/
