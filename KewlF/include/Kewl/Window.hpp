@@ -2,8 +2,8 @@
 
 #include <Kewl/EventHandler.hpp>
 #include <Kewl/String.hpp>
-#include <Kewl/Color.hpp>
-#include <Kewl/Image.hpp>
+#include <Kewl/Util/Color.hpp>
+#include <Kewl/Util/Image.hpp>
 
 namespace Kewl
 {

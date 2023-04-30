@@ -26,6 +26,8 @@ cmake_print_variables(glfw_BINARY_DIR)
 FetchContent_Declare(
     imgui
     GIT_REPOSITORY https://github.com/ocornut/imgui.git
+    GIT_TAG        origin/docking
+    #URL https://github.com/ocornut/imgui/archive/refs/heads/docking.zip
 )
 FetchContent_GetProperties(imgui)
 if(NOT imgui_POPULATED)
