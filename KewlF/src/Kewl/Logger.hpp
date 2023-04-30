@@ -3,7 +3,7 @@
 #include <iostream>
 #include <ostream>
 #include <fstream>
-#include "String.hpp"
+#include <Kewl/String.hpp>
 
 // Severity level enum.
 enum LogLevel
