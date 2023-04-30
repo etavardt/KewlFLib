@@ -8,7 +8,7 @@
 #include <Kewl/Color.hpp>
 #include "KewlFClass.hpp"
 
-using namespace Kewl;
+//using namespace Kewl;
 //using Kewl::ERROR;
 //using Kewl::INFO;
 //using Kewl::ASIS;
@@ -33,8 +33,8 @@ void KewlFApp::init() {
 }
 
 int KewlFApp::runApp() {
-    Color color;
-    NormalizedColor nColor;
+    Kewl::Color color;
+    Kewl::NormalizedColor nColor;
 
     assert(color.a == 255);
     assert(nColor.a == 1.0f);
@@ -42,7 +42,7 @@ int KewlFApp::runApp() {
     LOG(INFO) << "Hello World." << std::endl;
     LOG(ASIS) << "Hello World! Logged as is." << std::endl;
     std::cout << "Hello World! From std::cout!" << std::endl;
-    throw Exception("This exception was intentional!");
+    throw Kewl::Exception("This exception was intentional!");
     return 0;
 }
 

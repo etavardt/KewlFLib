@@ -13,7 +13,7 @@ using std::endl;
 
 using Kewl::App;
 using Kewl::Exception;
-using Kewl::ERROR;
+//using Kewl::ERROR;
 
 //extern "C"
 int main(int ac, char **av) {
