@@ -5,14 +5,16 @@
 FetchContent_MakeAvailable(glfw)
 cmake_print_variables(glfw_SOURCE_DIR)
 
+FetchContent_MakeAvailable(imgui)
+cmake_print_variables(imgui_SOURCE_DIR)
+
 include_directories(
     src/
     ../3rdParty/include/
-    #../3rdParty/glfw/include/
-    ${glfw_SOURCE_DIR}/include/
     ../3rdParty/glad/src/
     ../3rdParty/glad/include/
-    ../3rdParty/imgui/
+    ${glfw_SOURCE_DIR}/include/
+    ${imgui_SOURCE_DIR}/
 )
 
 # Add source to this project's executable.
