@@ -16,22 +16,26 @@ using std::size_t;
 namespace Kewl
 {
 
+
     //the following produce a strange error in VS Code editor
     //using StringStream = std::stringstream;
     //typedef std::stringstream StringStream;
 
-    typedef std::string String;
-    typedef std::vector<String> ArrayOfStrings;
-    typedef std::shared_ptr<String> SharedStringPointer;
+    using String = std::string;
+    using ArrayOfStrings = std::vector<String>;
+    using SharedStringPointer = std::shared_ptr<String>;
+    using StringStream = std::stringstream;
+
+    //typedef std::string String;
+    //typedef std::vector<String> ArrayOfStrings;
+    //typedef std::shared_ptr<String> SharedStringPointer;
+
+    //using MakeSharedStringPtr = std::make_shared<String>(void); // is a function, not a typename
+    //constexpr SharedStringPointer makeSharedString() { return std::make_shared<String>(); }// doesn't work
+    inline SharedStringPointer makeSharedStringPointer() { return std::make_shared<String>(); }
 
     template<typename T>
-    inline String toString(T n) {
-        return std::to_string(n);
-    }
-
-    inline SharedStringPointer makeSharedString() {
-        return std::make_shared<String>();
-    }
+    String toString(T n) { return std::to_string(n); }
 
     inline ArrayOfStrings toArrayOfStrings(const String& str, const char delim) {
         ArrayOfStrings newArrayOfStrings;
@@ -73,7 +77,7 @@ namespace Kewl
     // Taken from https://codereview.stackexchange.com/questions/187183/create-a-c-string-using-printf-style-formatting
     // base case of recursion, no more arguments
     // not it is also limited, handles %d and everything else as a string i.e. %s
-    inline void format_impl(std::stringstream& ss, const char* format) {
+    inline void format_impl(StringStream& ss, const char* format) {
         while (*format)
         {
             if (*format == '%' && *++format != '%') // %% == % (not a format directive)
@@ -83,7 +87,7 @@ namespace Kewl
     }
 
     template <typename Arg, typename... Args>
-    void format_impl(std::stringstream& ss, const char* format, Arg arg, Args... args) {
+    void format_impl(StringStream& ss, const char* format, Arg arg, Args... args) {
         while (*format)
         {
             if (*format == '%' && *++format != '%')
@@ -114,10 +118,9 @@ namespace Kewl
     }
 
     template <typename... Args>
-    std::string format(const char* fmt, Args... args) {
-        std::stringstream ss;
+    String format(const char* fmt, Args... args) {
+        StringStream ss;
         format_impl(ss, fmt, args...);
         return ss.str();
     }
-
 } // namespace Kewl

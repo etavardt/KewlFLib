@@ -9,12 +9,12 @@ namespace Kewl
 {
 
     SharedStringPointer Exception::getStackTrace() {
-        SharedStringPointer sTrace = makeSharedString();
+        SharedStringPointer sTracePtr = makeSharedStringPointer();
         String stMsg = st.getStackTrace();
 
-        sTrace->append(stMsg);
+        sTracePtr->append(stMsg);
 
-        return sTrace;
+        return sTracePtr;
     }
 
     const String Exception::getMsg() {
