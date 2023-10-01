@@ -152,7 +152,7 @@ namespace Kewl
 
         static double SM64(void)
         {
-            return SplitMix64() / std::numeric_limits<uint64_t>::max();
+            return (double)SplitMix64() / (double)std::numeric_limits<uint64_t>::max();
         }
 
         static double SM64(double min, double max)
@@ -189,7 +189,7 @@ namespace Kewl
         }
 
         static double X256p64(void) {
-            return (double)SplitMix64() / (double)std::numeric_limits<uint64_t>::max();
+            return (double)Xoshiro256p() / (double)std::numeric_limits<uint64_t>::max();
         }
 
         static double X256p64(double min, double max) {
