@@ -1,8 +1,8 @@
-#include "IndexBuffer.hpp"
+#include "Kewl/OpenGL/IndexBuffer.hpp"
 
 #include <glad/glad.h>
-#include "OpenGLDebug.hpp"
-#include "Renderer.hpp"
+#include "Kewl/OpenGL/OpenGLDebug.hpp"
+#include "Kewl/OpenGL/Renderer.hpp"
 
 namespace Kewl
 {

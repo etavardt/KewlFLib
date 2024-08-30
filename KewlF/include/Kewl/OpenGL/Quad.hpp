@@ -3,7 +3,7 @@
 #include <array>
 #include <vector>
 
-#include "Vertex.hpp"
+#include "Kewl/OpenGL/Vertex.hpp"
 
 namespace Kewl
 {

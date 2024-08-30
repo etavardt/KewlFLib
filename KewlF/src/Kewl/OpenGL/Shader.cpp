@@ -1,4 +1,4 @@
-#include "Shader.hpp"
+#include "Kewl/OpenGL/Shader.hpp"
 
 #include <glad/glad.h>
 #include <iostream>
@@ -10,7 +10,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <Kewl/Logger.hpp>
 
-#include "OpenGLDebug.hpp"
+#include "Kewl/OpenGL/OpenGLDebug.hpp"
 
 namespace Kewl
 {

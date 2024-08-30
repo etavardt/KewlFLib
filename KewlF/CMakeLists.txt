@@ -9,7 +9,7 @@ FetchContent_MakeAvailable(imgui)
 cmake_print_variables(imgui_SOURCE_DIR)
 
 include_directories(
-    src/
+    include/
     ../3rdParty/include/
     ../3rdParty/glad/src/
     ../3rdParty/glad/include/
@@ -36,10 +36,10 @@ endif()
 
 # TODO: Add tests and install targets if needed.
 
-file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/
-     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include/
-     FILES_MATCHING PATTERN *.hpp
-)
+#file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/src/
+#     DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include/
+#     FILES_MATCHING PATTERN *.hpp
+#)
 
 #add_custom_command(
 #    TARGET KewlF POST_BUILD

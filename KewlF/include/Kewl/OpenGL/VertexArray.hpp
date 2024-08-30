@@ -1,7 +1,7 @@
 #pragma once
 
-#include "VertexBuffer.hpp"
-#include "VertexBufferLayout.hpp"
+#include "Kewl/OpenGL/VertexBuffer.hpp"
+#include "Kewl/OpenGL/VertexBufferLayout.hpp"
 
 namespace Kewl
 {

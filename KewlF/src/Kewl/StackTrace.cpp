@@ -1,4 +1,4 @@
-#include "StackTrace.hpp"
+#include "Kewl/StackTrace.hpp"
 
 
 #ifdef DEBUG

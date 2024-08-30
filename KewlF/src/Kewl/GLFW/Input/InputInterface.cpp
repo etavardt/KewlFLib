@@ -1,4 +1,4 @@
-#include "InputInterface.hpp"
+#include "Kewl/GLFW/Input/InputInterface.hpp"
 
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>

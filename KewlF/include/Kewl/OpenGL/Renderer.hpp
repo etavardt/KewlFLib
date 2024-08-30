@@ -1,8 +1,8 @@
 #pragma once
 
-#include "VertexArray.hpp"
-#include "IndexBuffer.hpp"
-#include "Shader.hpp"
+#include "Kewl/OpenGL/VertexArray.hpp"
+#include "Kewl/OpenGL/IndexBuffer.hpp"
+#include "Kewl/OpenGL/Shader.hpp"
 
 namespace Kewl
 {

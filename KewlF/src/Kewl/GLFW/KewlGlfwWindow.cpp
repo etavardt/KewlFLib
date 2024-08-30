@@ -1,4 +1,4 @@
-#include "KewlGlfwWindow.hpp"
+#include "Kewl/GLFW/KewlGlfwWindow.hpp"
 
 #include <Kewl/Exception.hpp>
 

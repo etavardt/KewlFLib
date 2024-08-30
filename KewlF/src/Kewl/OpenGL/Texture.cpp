@@ -1,8 +1,8 @@
-#include "Texture.hpp"
+#include "Kewl/OpenGL/Texture.hpp"
 #include <glad/glad.h>
 #include <Kewl/Logger.hpp>
 
-#include "OpenGLDebug.hpp"
+#include "Kewl/OpenGL/OpenGLDebug.hpp"
 
 namespace Kewl
 {

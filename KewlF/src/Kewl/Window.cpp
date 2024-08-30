@@ -1,9 +1,9 @@
-#include "Window.hpp"
+#include "Kewl/Window.hpp"
 
-#include "App.hpp"
-#include "String.hpp"
-#include "Exception.hpp"
-#include "Logger.hpp"
+#include "Kewl/App.hpp"
+#include "Kewl/String.hpp"
+#include "Kewl/Exception.hpp"
+#include "Kewl/Logger.hpp"
 
 namespace Kewl
 {

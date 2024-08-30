@@ -2,7 +2,7 @@
 
 #include <vector>
 #include <glad/glad.h>
-#include "OpenGLDebug.hpp"
+#include "Kewl/OpenGL/OpenGLDebug.hpp"
 
 namespace Kewl
 {

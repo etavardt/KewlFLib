@@ -14,6 +14,7 @@
 //using Kewl::ASIS;
 
 KewlFApp kewlApp;
+//KewlFApp kewlApp2; // uncomment to show singleton error when 2 Apps are attempted to be instantuated
 
 KewlFApp::KewlFApp() {
     LOG(INFO) << "KewlFApp Constructor" << std::endl;

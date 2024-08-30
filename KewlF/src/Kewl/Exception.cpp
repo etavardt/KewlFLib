@@ -1,9 +1,9 @@
-#include "Exception.hpp"
+#include "Kewl/Exception.hpp"
 
 #include <iostream>
 
-#include "String.hpp"
-#include "StackTrace.hpp"
+#include "Kewl/String.hpp"
+#include "Kewl/StackTrace.hpp"
 
 namespace Kewl
 {

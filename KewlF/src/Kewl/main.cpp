@@ -3,9 +3,9 @@
 //#include <cstdlib>
 #include <iostream>
 
-#include "App.hpp"
-#include "Exception.hpp"
-#include "Logger.hpp"
+#include "Kewl/App.hpp"
+#include "Kewl/Exception.hpp"
+#include "Kewl/Logger.hpp"
 
 using std::cout;
 using std::cerr;
@@ -17,7 +17,7 @@ using Kewl::Exception;
 
 //extern "C"
 int main(int ac, char **av) {
-    App &app = App::getApp();
+    App &app = App::getApp();  // We expect the App has been created globally via a UserApp instance.
     try {
         app.processCmdLine(ac, av);
         app.init();

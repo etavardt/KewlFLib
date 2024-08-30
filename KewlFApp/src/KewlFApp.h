@@ -1,11 +1,13 @@
 ﻿#pragma once
 
 #include <iostream>
-#include "App.hpp"
+//#include "App.hpp"
+
+class App;
 
 class KewlFApp : public App {
 protected:
-	static KewlFApp &kewlApp;
+	//static KewlFApp &kewlApp;
 
     KewlFApp();
     ~KewlFApp();
@@ -15,7 +17,7 @@ protected:
     int runApp() override;   // Use this for your primary program implementation
 
 public:
-    static inline KewlFApp& getApp() { return kewlApp; }
+    static KewlFApp& getApp() { return kewlApp; }
     static KewlFApp& getInstance();
 
     int processCmdLine(int argCnt, char** argList) override;

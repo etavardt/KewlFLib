@@ -1,4 +1,4 @@
-#include "Quad.hpp"
+#include "Kewl/OpenGL/Quad.hpp"
 
 namespace Kewl
 {

@@ -1,11 +1,11 @@
 //#include "Logger.hpp"
-#include "EventHandler.hpp"
+#include "Kewl/EventHandler.hpp"
 
-#include "Exception.hpp"
-#include "Window.hpp"
+#include "Kewl/Exception.hpp"
+#include "Kewl/Window.hpp"
 
-#include "Logger.hpp"
-#include "unused_macros.hpp"
+#include "Kewl/Logger.hpp"
+#include "Kewl/unused_macros.hpp"
 
 #undef UNHANDLED
 #define UNHANDLED(x) LOG(DEBUG) << "Unhandled Event(" << x.type << ")";

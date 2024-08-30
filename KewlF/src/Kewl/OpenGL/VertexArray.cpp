@@ -1,6 +1,6 @@
-#include "VertexArray.hpp"
+#include "Kewl/OpenGL/VertexArray.hpp"
 
-#include "OpenGLDebug.hpp"
+#include "Kewl/OpenGL/OpenGLDebug.hpp"
 
 namespace Kewl
 {

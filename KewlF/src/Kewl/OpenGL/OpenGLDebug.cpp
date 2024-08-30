@@ -1,4 +1,4 @@
-#include "OpenGLDebug.hpp"
+#include "Kewl/OpenGL/OpenGLDebug.hpp"
 
 #include <iostream>
 #include <sstream>

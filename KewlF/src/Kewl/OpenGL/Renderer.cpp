@@ -1,6 +1,6 @@
-#include "Renderer.hpp"
+#include "Kewl/OpenGL/Renderer.hpp"
 
-#include "OpenGLDebug.hpp"
+#include "Kewl/OpenGL/OpenGLDebug.hpp"
 
 namespace Kewl
 {

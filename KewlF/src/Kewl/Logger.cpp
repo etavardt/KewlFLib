@@ -1,6 +1,6 @@
-#include "Logger.hpp"
+#include "Kewl/Logger.hpp"
 
-#include "String.hpp"
+#include "Kewl/String.hpp"
 
 namespace Kewl
 {
